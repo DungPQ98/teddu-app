@@ -1,38 +1,39 @@
 <template>
   <div class="body-container overflow-hidden">
-    <Banner />
-    <BuyTeddu />
-    <TedduStaking />
-    <Earn />
-    <HowItWork />
-    <Tokenomic />
-    <Features />
-    <Footer />
+      <div class="flex w-full justify-center main-banner">
+    <div class="flex flex-col w-full relative banner-container">
+      <div class="background">
+        <img
+          src="~/static/images/bg-header.png"
+          class="w-full absolute top-0 left-0 desktop"
+        />
+      </div>
+
+      <div class="flex w-full justify-center relative">
+        <Header />
+        <SideBar />
+      </div>
+
+      <div class="flex w-full text-center main-content relative">
+        <div class="left-banner flex flex-col justify-center">
+
+        </div>
+
+      </div>
+    </div>
+  </div>
   </div>
 </template>
 
 <script lang="ts">
 import Vue from 'vue'
-import Banner from '~/components/Home/Banner/index.vue'
-import Footer from '~/components/Home/Footer.vue'
-import BuyTeddu from '~/components/BuyTeddu/index.vue'
-import Features from '~/components/Features/index.vue'
-import TedduStaking from '~/components/TedduStaking/index.vue'
-import Earn from '~/components/Earn/index.vue'
-import HowItWork from '~/components/HowItWork/index.vue'
-import Tokenomic from '~/components/Tokenomic/index.vue'
-
+import Header from '../components/Home/Banner/Header.vue'
+import SideBar from '../components/Home/Banner/SideBar.vue'
 export default Vue.extend({
   name: 'IndexPage',
   components: {
-    Banner,
-    Footer,
-    BuyTeddu,
-    Features,
-    TedduStaking,
-    Earn,
-    HowItWork,
-    Tokenomic
+    Header,
+    SideBar
 },
 })
 </script>

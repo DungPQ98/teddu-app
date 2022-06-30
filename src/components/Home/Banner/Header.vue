@@ -3,19 +3,17 @@
     <div class="logo z-10">
       <img src="~/static/icons/logo.svg" />
     </div>
-    <div class="menu-center flex z-10">
-      <button class="menu-btn">Home</button>
-      <button class="menu-btn">Features</button>
-      <button class="menu-btn">Tokenomic</button>
-      <button class="menu-btn">Contact</button>
-      <button class="menu-btn">Swap</button>
-      <button class="menu-btn flex items-center justify-center">
-        Docs
-        <img class="img-docs" src="~/static/icons/icon-dropdown.png" />
-      </button>
-    </div>
     <div class="main-menu flex z-10">
-      <button class="move-to-earn">Contact Us</button>
+      <a
+        v-for="(item, index) in data"
+        :key="index"
+        :href="item.link"
+        target="_blank"
+      >
+        <img :src="item.icon" alt="" />
+      </a>
+      <button class="btn move-to-earn">Teddinu</button>
+      <button class="btn connect-wallet">Connect wallet</button>
     </div>
   </div>
 </template>
@@ -24,6 +22,28 @@
 import Vue from 'vue'
 export default Vue.extend({
   name: 'NuxtHeader',
+  data() {
+    return {
+      data: [
+        {
+          link: '',
+          icon: require('~/static/icons/mail.png'),
+        },
+        {
+          link: '',
+          icon: require('~/static/icons/tele.png'),
+        },
+        {
+          link: '',
+          icon: require('~/static/icons/tele.png'),
+        },
+        {
+          link: '',
+          icon: require('~/static/icons/twiter.png'),
+        },
+      ],
+    }
+  },
 })
 </script>
 
@@ -77,7 +97,7 @@ export default Vue.extend({
     .move-to-earn {
       min-width: 172.73px;
       height: 44.23px;
-      background: #985C23;
+      background: #985c23;
       color: white;
       margin-left: 18px;
       font-weight: 400;
@@ -98,10 +118,9 @@ export default Vue.extend({
   padding: 0 30px;
   font-size: 24px;
   font-weight: 400;
-  color: #FFFFFF;
+  color: #ffffff;
   .img-docs {
     padding-left: 7px;
   }
-
 }
 </style>
