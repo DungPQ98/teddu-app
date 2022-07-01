@@ -13,7 +13,7 @@
         <img :src="item.icon" alt="" />
       </a>
       <button class="btn move-to-earn">Teddinu</button>
-      <button class="btn connect-wallet">Connect wallet</button>
+      <button class="btn move-to-earn connect-wallet">Connect wallet</button>
     </div>
   </div>
 </template>
@@ -49,11 +49,11 @@ export default Vue.extend({
 
 <style lang="scss" scoped>
 .main-header {
-  background-size: cover;
-  max-width: 1440px;
+  background: #130a02;
+  max-width: 1920px;
   .logo {
     padding-top: 37px;
-    padding-left: 86px;
+    padding-left: 36px;
     @media only screen and (max-width: 767px) {
       padding-top: 16px;
       padding-left: 10px;
@@ -70,6 +70,12 @@ export default Vue.extend({
     padding-top: 28px;
     padding-right: 85px;
     font-size: 14px;
+    padding-bottom: 20px;
+    align-items: center;
+    a {
+      max-width: 64px;
+      margin-right: 30px;
+    }
     @media only screen and (max-width: 767px) {
       padding-top: 16px;
       padding-right: 16px;
@@ -95,19 +101,18 @@ export default Vue.extend({
       }
     }
     .move-to-earn {
-      min-width: 172.73px;
-      height: 44.23px;
+      width: 231.59px;
+      height: 70.77px;
       background: #985c23;
       color: white;
       margin-left: 18px;
       font-weight: 400;
-      font-size: 20px;
-      border: 4px solid #000000;
-      border-radius: 8px;
-      @media only screen and (max-width: 767px) {
-        min-width: 81px;
-        height: 28px;
-      }
+      font-size: 30px;
+      border: 2px solid rgba(255, 255, 255, 0.25);
+      border-radius: 12px;
+    }
+    .connect-wallet {
+      background: #5794cc;
     }
   }
 }

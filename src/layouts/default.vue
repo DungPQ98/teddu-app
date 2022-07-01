@@ -23,7 +23,7 @@
   </div>
 </template>
 
-<script lang="ts">
+<script>
 import Vue from 'vue'
 import Header from '../components/Home/Banner/Header.vue'
 import SideBar from '../components/Home/Banner/SideBar.vue'
