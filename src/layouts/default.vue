@@ -14,7 +14,7 @@
       </div>
       <div class="flex w-full justify-start relative">
         <SideBar />
-        <div class="main-content">
+        <div class="w-full main-content">
           <nuxt />
         </div>
       </div>

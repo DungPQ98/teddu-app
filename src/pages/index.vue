@@ -1,166 +1,166 @@
 <template>
-  <div class="body-container overflow-hidden">
-      <div class="flex w-full justify-center main-banner">
-    <div class="flex flex-col w-full relative banner-container">
-      <div class="background">
-        <img
-          src="~/static/images/bg.png"
-          class="w-full absolute top-0 left-0 desktop"
-        />
-      </div>
-
-      <div class="flex w-full justify-center relative">
-        <Header />
-      </div>
-      <div class="flex w-full justify-start relative">
-        <SideBar />
-        <div class="main-content">
-          <nuxt />
+  <div class="flex w-full h-full relative justify-between dashboard">
+    <div class="w-full h-full dashboard-container">
+      <div class="flex px-4">
+        <div class="partern flex flex-col">
+          <div class="intro">
+            <div class="title-intro">
+              Market value of treasure
+            </div>
+            <div class="price-intro">
+              $1,689,496
+            </div>
+          </div>
+          <Card :title="'Total Supply'" :price="'$1,689,496'" />
+          <Card :title="'Circulating Supply'" :price="'4,738,612.27'" />
+          <Card :title="'# Value of FirePit'" :price="'$1,689,496'" />
+        </div>
+        <div class="partern flex flex-col">
+          <div class="teddu-price">
+            <div class="teddu-price_container">
+              <div class="teddu-price_title">
+                Teddinu price
+              </div>
+              <div class="teddu-price_content">
+                <div class="teddu-price_price">
+                  $12.92
+                </div>
+                <div class="teddu-price_clock">
+                  <span class="text-pd">00 : 00 :00</span>
+                </div>
+                <div class="teddu-price_footer">
+                  Rebasing...
+                </div>
+              </div>
+            </div>
+          </div>
+          <Card :title="'$ Value of FirePit'" :price="'$1,689,496'" />
+        </div>
+        <div class="partern flex flex-col">
+          <div class="intro">
+            <div class="title-intro">
+              Teddinu inssurent fund value
+            </div>
+            <div class="price-intro">
+              $1,068,839
+            </div>
+          </div>
+          <Card :title="'MarketCap'" :price="'$1,689,496'" />
+          <Card :title="'Pool Value'" :price="'$1,689,496'" />
+          <Card :title="'% FirePit : Supply'" :price="'$1,689,496'" />
         </div>
       </div>
     </div>
   </div>
-  </div>
 </template>
 
-<script lang="ts">
-import Vue from 'vue'
-import Header from '../components/Home/Banner/Header.vue'
-import SideBar from '../components/Home/Banner/SideBar.vue'
-export default Vue.extend({
-  name: 'IndexPage',
-  components: {
-    Header,
-    SideBar
-},
-})
+<script>
+import Card from '~/components/Dashboard/Card.vue';
+export default {
+  components: { Card }
+}
 </script>
 
 <style lang="scss" scoped>
-.body-container {  background: #302B27;
-}
-</style>
+.dashboard-container {
+  padding: 0 30px;
 
-<style lang="scss">
-/* .bgvid {
-  inset: 0px;
-  position: fixed;
-  height: 100vh;
-  width: 100vw;
-  max-width: 100%;
-  object-fit: cover;
-  z-index: -1;
-  user-select: none;
-} */
-@font-face {
-  font-family: 'Langar';
-  src: url(../static/fonts/Langar-Regular.ttf);
-}
-@font-face {
-  font-family: "Monument Extended";
-  src: local("Monument Extended"),
-   url(../static/fonts/MonumentExtended-Regular.otf) format("truetype");
-}
-.font-mehu {
-  font-family: "Monument Extended";
-}
-.desktop {
-  @media only screen and (max-width: 767px) {
-    display: none;
+  .intro {
+    margin: 40px 0;
+    text-align: center;
+
+    .title-intro {
+      font-weight: 400;
+      font-size: 32px;
+      color: #FFFFFF;
+    }
+
+    .price-intro {
+      color: #3DFF39;
+      font-weight: 400;
+      font-size: 40px;
+    }
   }
-}
-.mobile {
-  @media only screen and (min-width: 767px) {
-    display: none;
-  }
-}
-body {
-  font-family: 'Langar';
-  color: #FFFFFF;
-}
-.btn {
-  min-width: 172.73px;
-  height: 44.23px;
-  background: #985C23;
-  color: white;
-  font-weight: 400;
-  font-size: 20px;
-  border: 4px solid #000000;
-  border-radius: 8px;
-  @media only screen and (max-width: 767px) {
-    min-width: 81px;
-    height: 28px;
-    font-size: 14px;
-  }
-}
-.banner-container {
-  height: 100vh;
-  .background {
-    img {
+
+  .teddu-price {
+
+    margin-top: 35px;
+
+    &_container {
+      background-image: url(~/static/images/bg-clock.png);
+      background-repeat: no-repeat;
+      background-size: cover;
+      width: 427px;
+      height: 533px;
+      position: relative;
+    }
+
+    &_content {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
       height: 100%;
+    }
+
+    &_title {
+      background-image: url(~/static/images/bg-title.png);
+      background-repeat: no-repeat;
+      background-size: cover;
+      width: 464px;
+      height: 79px;
+      text-align: center;
+      line-height: 80px;
+      font-size: 32px;
+      color: #FFF2F2;
+      position: absolute;
+      right: -20px;
+      top: 17px;
+    }
+
+    &_clock {
+      background-image: url(~/static/icons/clock.png);
+      background-repeat: no-repeat;
+      background-size: contain;
+      width: 371px;
+      height: 167px;
+      margin: 0 auto;
+      font-weight: 400;
+      font-size: 64px;
+      line-height: 145px;
+      text-align: center;
+      color: #FFFFFF;
+      margin-left: 35px;
+
+      .text-pd {
+        display: inline-block;
+        padding-right: 20px;
+      }
+    }
+
+    &_price {
+      font-weight: 400;
+      font-size: 40px;
+      color: #000000;
+      padding: 16px 0 50px 0;
+      text-align: center;
+      margin-top: 40px;
+    }
+
+    &_footer {
+      text-align: center;
+      font-size: 32px;
+      color: #000000;
+      padding: 26px 0 20px 0;
     }
   }
 }
-</style>
 
-<style lang="sass">
-.agile
-  width: 100%
+.card {
+  margin: 15px 5px;
+}
 
-  &__actions
-    margin-top: 20px
-
-  &__nav-button
-    background: transparent
-    border: none
-    color: #ccc
-    cursor: pointer
-    font-size: 24px
-    transition-duration: .3s
-
-    &:hover
-      color: #888
-
-  &__dot
-    margin: 0 10px
-
-    button
-      background-color: #eee
-      border: none
-      border-radius: 50%
-      cursor: pointer
-      display: block
-      height: 10px
-      font-size: 0
-      line-height: 0
-      margin: 0
-      padding: 0
-      transition-duration: .3s
-      width: 10px
-
-    &--current,
-    &:hover
-      button
-        background-color: #888
-
-// Slides styles	
-.slide
-  align-items: center
-  color: #fff
-  display: flex
-  height: 300px
-  justify-content: center
-
-  h3
-    font-size: 32px
-    font-weight: 300
-
-// Slides backgrounds
-$colors: #f1c40f #e67e22 #e74c3c #9b59b6 #3498db #2ecc71
-
-@for $i from 1 through length($colors)
-  $color: nth($colors, $i)
-
-  .slide--#{$i}
-    background-color: $color
+.partern {
+  margin: 0 15px;
+}
 </style>

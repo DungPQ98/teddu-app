@@ -67,8 +67,8 @@ export default Vue.extend({
     }
   }
   .main-menu {
-    padding-top: 28px;
-    padding-right: 85px;
+    padding-top: 18px;
+    padding-right: 25px;
     font-size: 14px;
     padding-bottom: 20px;
     align-items: center;
